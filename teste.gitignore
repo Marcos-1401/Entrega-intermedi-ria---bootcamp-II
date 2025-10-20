@@ -1,0 +1,12 @@
+# Dependências
+node_modules/
+
+# Build
+dist/
+
+# Relatórios e Logs
+playwright-report/
+npm-debug.log*
+
+# Docker (se usar .env)
+.env
