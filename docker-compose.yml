@@ -1,0 +1,15 @@
+services:
+  e2e:
+    build: .
+    image: bootcamp/ext-e2e:latest
+    environment:
+      - CI=true # Informa ao Playwright que está em ambiente de CI
+    # volumes:
+      # Descomente a linha abaixo se quiser que os relatórios apareçam localmente
+      # - ./playwright-report:/app/playwright-report
+    working_dir: /app
+    # Executa o script 'test' (npm run build && npm run test:e2e)
+    command: npm test
+    
+    # shm_size é crucial para o Chromium rodar bem em containers
+    shm_size: 2gb
